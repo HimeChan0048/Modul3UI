@@ -7,4 +7,4 @@ Pyqt5
 Pyserial
   pip install pyserial
   
-When not connecting to serial, please comment the serial part.
+When not connecting with serial communication, please comment all the serial part .
