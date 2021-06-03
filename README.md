@@ -1,7 +1,7 @@
 # Modul3UI
 For FRAB#6 Module 3
 
-#Requirements
+# Requirements
 Pyqt5
   pip install PyQt5
 Pyserial
