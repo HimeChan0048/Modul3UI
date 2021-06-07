@@ -6,7 +6,7 @@ import random
 
 
 # ser = serial.Serial('COM4',512000,parity='E',stopbits=1,timeout=3) #when using serial only
-ser=serial.Serial() #when not using serial. Switch to the upper mode when using serial
+ser=serial.Serial() #when not using serial. Switch to the mode above when using serial
 
 TenStations=[1,5,18,25,36,50,54,60,62,70] #config the stations 
 frame2station=0
