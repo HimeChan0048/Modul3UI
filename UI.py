@@ -342,7 +342,7 @@ class Ui_MainWindow(object):
         self.Home.setText(_translate("Mainwindow","Home"))
         self.Gosta.setText(_translate("Mainwindow","Go"))
 ##################################################################################################################################
-#1sec timer
+#checksum
 ##################################################################################################################################
     def checksum(self,Data_Frame):
         return ([(~(sum(Data_Frame)%256))%256])
@@ -358,7 +358,7 @@ class Ui_MainWindow(object):
         self.Velo.setText("Angular Velocity :" + str(av)+" rpm")
         nocheck=[149,int(av)]
         ser.write([148,int(av),self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
         # print([148,int(av),self.checksum(nocheck)[0]])
 
@@ -370,7 +370,7 @@ class Ui_MainWindow(object):
         self.Accel.setText("Angular Position :" + str(ap))
         nocheck=[149,abp1,abp2]
         ser.write([149,apb[:1],apb[-1:],self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
         # print([149,apb[:1],apb[-1:],self.checksum(nocheck)[0]])
 
@@ -384,97 +384,97 @@ class Ui_MainWindow(object):
                 nooneknow.append(int(whatisthis))
             nooneknow.append(self.checksum(nooneknow)[0])
             ser.write(nooneknow)
-            while(ser.readline!='\x58\x75'):
+            while(ser.readline()!='\x58\x75'):
                 pass
             # print(nooneknow)
         elif len(sometemplist)==1:
             nocheck=[150,int(sometemplist[0])]
             ser.write([150,int(sometemplist[0]),self.checksum(nocheck)[0]])
-            while(ser.readline!='\x58\x75'):
+            while(ser.readline()!='\x58\x75'):
                 pass
             # print([150,int(sometemplist[0]),self.checksum(nocheck)[0]])
 
     def gron(self):
         ser.write([156,self.checksum([156])[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
         self.GripperStatus.setText("Status : On")
     def grof(self):
         ser.write([157,self.checksum([157])[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
         self.GripperStatus.setText("Status : Off")
     def botcon(self):
         ser.write([146,self.checksum([146])[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def botdcon(self):
         ser.write([147,self.checksum([147])[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
 
     def gohome(self):
         ser.write([158,self.checksum([158])[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
 
     def gogosta(self):
         ser.write([152,self.checksum([152])[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
-        while(ser.readline!='\x46\x6E'):
+        while(ser.readline()!='\x46\x6E'):
             pass
         
         
     def bb1(self):        
         nocheck=[150,1]
         ser.write([150,1,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb2(self):
         nocheck=[150,2]
         ser.write([150,2,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb3(self):
         nocheck=[150,3]
         ser.write([150,3,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb4(self):
         nocheck=[150,4]
         ser.write([150,4,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb5(self):
         nocheck=[150,5]
         ser.write([150,5,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb6(self):
         nocheck=[150,6]
         ser.write([150,6,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb7(self):
         nocheck=[150,7]
         ser.write([150,7,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb8(self):
         nocheck=[150,8]
         ser.write([150,8,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb9(self):
         nocheck=[150,9]
         ser.write([150,9,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
     def bb10(self):
         nocheck=[150,10]
         ser.write([150,10,self.checksum(nocheck)[0]])
-        while(ser.readline!='\x58\x75'):
+        while(ser.readline()!='\x58\x75'):
             pass
 
     def timer_function(self):
@@ -482,13 +482,13 @@ class Ui_MainWindow(object):
 
             #uncomment these lines when using serial
         # ser.write([153,self.checksum([153])[0]])
-        # while(ser.readline!='\x58\x75'):
+        # while(ser.readline()!='\x58\x75'):
         #     pass
         # currentsta=ser.readline()[1]
         # ser.write("\x58\x75")
         # self.label_3.setText("Current Station : "+str(currentsta))
         # ser.write([154,self.checksum([154])[0]])                
-        # while(ser.readline!='\x58\x75'):
+        # while(ser.readline()!='\x58\x75'):
         #     pass
         # currentaa=ser.readline()[1:3]
         # ser.write("\x58\x75")  
