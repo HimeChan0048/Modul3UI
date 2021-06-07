@@ -357,7 +357,7 @@ class Ui_MainWindow(object):
             av=self.manualav.text()
         self.Velo.setText("Angular Velocity :" + str(av)+" rpm")
         nocheck=[149,int(av)]
-        ser.write([148,int(av),self.checksum(nocheck)[0]])
+        ser.write([148,0,int(av),self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
         # print([148,int(av),self.checksum(nocheck)[0]])
@@ -389,7 +389,7 @@ class Ui_MainWindow(object):
             # print(nooneknow)
         elif len(sometemplist)==1:
             nocheck=[150,int(sometemplist[0])]
-            ser.write([150,int(sometemplist[0]),self.checksum(nocheck)[0]])
+            ser.write([150,0,int(sometemplist[0]),self.checksum(nocheck)[0]])
             while(ser.readline()!='\x58\x75'):
                 pass
             # print([150,int(sometemplist[0]),self.checksum(nocheck)[0]])
@@ -428,52 +428,52 @@ class Ui_MainWindow(object):
         
     def bb1(self):        
         nocheck=[150,1]
-        ser.write([150,1,self.checksum(nocheck)[0]])
+        ser.write([150,0,1,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb2(self):
         nocheck=[150,2]
-        ser.write([150,2,self.checksum(nocheck)[0]])
+        ser.write([150,0,2,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb3(self):
         nocheck=[150,3]
-        ser.write([150,3,self.checksum(nocheck)[0]])
+        ser.write([150,0,3,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb4(self):
         nocheck=[150,4]
-        ser.write([150,4,self.checksum(nocheck)[0]])
+        ser.write([150,0,4,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb5(self):
         nocheck=[150,5]
-        ser.write([150,5,self.checksum(nocheck)[0]])
+        ser.write([150,0,5,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb6(self):
         nocheck=[150,6]
-        ser.write([150,6,self.checksum(nocheck)[0]])
+        ser.write([150,0,6,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb7(self):
         nocheck=[150,7]
-        ser.write([150,7,self.checksum(nocheck)[0]])
+        ser.write([150,0,7,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb8(self):
         nocheck=[150,8]
-        ser.write([150,8,self.checksum(nocheck)[0]])
+        ser.write([150,0,8,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb9(self):
         nocheck=[150,9]
-        ser.write([150,9,self.checksum(nocheck)[0]])
+        ser.write([150,0,9,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
     def bb10(self):
         nocheck=[150,10]
-        ser.write([150,10,self.checksum(nocheck)[0]])
+        ser.write([150,0,10,self.checksum(nocheck)[0]])
         while(ser.readline()!='\x58\x75'):
             pass
 
